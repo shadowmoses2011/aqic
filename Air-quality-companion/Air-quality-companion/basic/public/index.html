@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Aqi Companion</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark fixed-top">
+    <div id="fab1" data-toggle="modal" data-target="#addCityDialog">
+      <span class="glyphicon glyphicon-plus fa-2x"></span>
+    </div>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">PM 2.5</a>
+    </div>
+    <div id="fab2" data-toggle="modal" data-target="#addUserDialog">
+      <img src="user.png" alt="fab">
+    </div>
+
+  </nav>
+
+  <div  id="mainpage" >
+
+  </div>
+  <div id="CityListContainer">
+      <div id="cities">
+
+      </div>
+    </div>
+
+  <div id="homeBar" class="nav navbar">
+    <div class="navbar-header">
+      <img id="backBtn" src="triangle-left-arrow-outline.png" alt="back">
+      <img id="homeBtn" src="circle-outline.png" alt="home">
+      <img id="menuBtn" src="check-box-empty.png" alt="menu">
+    </div>
+  </div>
+
+  <div id="buttonGroup" class="btn-group-justified">
+    <div id="Alarm" class="btn btn-danger">SET ALERT</div>
+    <div id="Map" class="btn btn-light">MAP</div>
+    <div id="Calendar" class="btn btn-success">GUIDE</div>
+  </div>
+
+  
+
+  <div class="modal fade" id="addCityDialog" tabindex="-1" role="dialog" aria-labelledby="add city"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enter a new city</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+            <label for="inputImageUrl" class="col-sm-2 control-label">
+              <img id="imgForEdit" src="edit.png" alt="edit">
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="inputCityName" class="" placeholder="Name of the city">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-dismiss="modal">CANCEL</button>
+          <button id="submitAddCity" type="button" class="btn btn-outline-light" data-dismiss="modal">ADD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="addUserDialog" tabindex="-1" role="dialog" aria-labelledby="add user"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign in</h5>
+      </div>
+      <div class="modal-body">
+       Sign in will allow you to view detail page of each city, set alert and use favorite city feature.
+      </div>
+      <div class="modal-footer">
+        <!-- <button id="ROSEFSIGNOUT" type="button" class="btn btn-outline-light" data-dismiss="modal">SIGNOUT</button>
+        <button id="ROSEF" type="button" class="btn btn-outline-light" data-dismiss="modal">ROSEFIRE</button> -->
+        <button id="Auth" type="button" class="btn btn-outline-light" data-dismiss="modal">SIGN IN</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="/__/firebase/6.3.5/firebase-app.js"></script>
+  <script src="/__/firebase/6.3.5/firebase-firestore.js"></script>
+  <script src="/__/firebase/6.3.5/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

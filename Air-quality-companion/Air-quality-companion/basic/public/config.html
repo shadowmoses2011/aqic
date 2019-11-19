@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Aqi Companion</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark fixed-top">
+    <div class="navbar-header">
+      <a class="navbar-brand1" href="#">Shanghai</a>
+    </div>
+    <div id="fab1" data-toggle="modal" data-target="#settingDialog">
+      <span class="glyphicon glyphicon-cog fa-2x"></span>
+    </div>
+  </nav>
+
+
+  <div id="favoriteCity" data-toggle="modal" data-target="#changeFavCityDialog">
+    Change your favorite city
+  </div>
+  <div id="config-page" class="container page-container col-md-12">
+    <div class="item-group">
+      <ul class="menu">
+        <li>
+          <a id="menutitle">display (max of 4)</a>
+          <ul>
+            <li><a><input id="pm10" type="checkbox">
+                <label for="pm10">PM10</label></a></li>
+            <li><a><input id="pm2.5" type="checkbox" checked>
+                <label for="pm2.5">PM2.5</label></a></li>
+            <li><a><input id="temprature" type="checkbox" checked>
+                <label for="temprature">Temprature</label></a></li>
+            <li><a><input id="weather" type="checkbox" checked>
+                <label for="weather">Weather</label></a></li>
+            <li><a><input id="ozone" type="checkbox">
+                <label for="ozone">Ozone</label></a></li>
+            <li><a><input id="wind" type="checkbox">
+                <label for="wind">Wind</label></a></li>
+            <li><a><input id="precipitation" type="checkbox">
+                <label for="precipitation">Precipitation</label></a></li>
+          </ul>
+        </li>
+    </div>
+
+    <div class="future-time">
+      <ul class="tmenu">
+        <li>
+          <a href="#">forecast (hours)</a>
+          <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></ll>
+          </ul>
+        </li>
+    </div>
+
+  </div>
+
+  <button id="saveChanges" type="button" class="btn" data-toggle="modal" data-target="#confirmSaveDialog">SAVE</button>
+
+  <div id="homeBar" class="nav navbar">
+    <div class="navbar-header">
+      <img id="backBtn" src="triangle-left-arrow-outline.png" alt="back">
+      <img id="homeBtn" src="circle-outline.png" alt="home">
+      <img id="menuBtn" src="check-box-empty.png" alt="menu">
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="changeFavCityDialog" tabindex="-1" role="dialog" aria-labelledby="change favorite city"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enter your favorite city</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+            <label for="inputFavCityName" class="col-sm-2 control-label">
+              <img id="imgForEdit" src="edit.png" alt="edit">
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="inputFavCityName" class="form-control" placeholder="Name of the city">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-dismiss="modal">CANCEL</button>
+          <button id="submitChangeFavCity" type="button" class="btn btn-outline-light"
+            data-dismiss="modal">CHANGE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="confirmSaveDialog" tabindex="-1" role="dialog" aria-labelledby="confirm saving"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Are you sure that you want to save?</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">CANCEL</button>
+        <button id="submitSaveConfig" type="button" class="btn btn-outline-light"
+          data-dismiss="modal">YES</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.min.js"></script>
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="/__/firebase/6.3.5/firebase-app.js"></script>
+  <script src="/__/firebase/6.3.5/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

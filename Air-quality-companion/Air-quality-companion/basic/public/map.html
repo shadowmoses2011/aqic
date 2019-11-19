@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Aqi Companion</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top">
+        <div id="fab1" data-toggle="modal" data-target="#addCityDialog">
+            <span class="glyphicon glyphicon-cog fa-2x"></span>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">PM 2.5</a>
+        </div>
+        <div id="fab2" data-toggle="modal" data-target="#addUserDialog">
+            <img src="user.png" alt="fab">
+        </div>
+
+    </nav>
+
+    <div id="map-page">
+        <div id="map-container" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe id="frame" src="https://www.airvisual.com/air-quality-map?lat=35.6895&lng=139.69171&zoomLevel=10"
+                frameborder="0" style="height: 1200px; width: 700%;" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+
+    <div id="homeBar" class="nav navbar">
+        <div class="navbar-header">
+            <img id="backBtn" src="triangle-left-arrow-outline.png" alt="back">
+            <img id="homeBtn" src="circle-outline.png" alt="home">
+            <img id="menuBtn" src="check-box-empty.png" alt="menu">
+        </div>
+    </div>
+
+    <div id="buttonGroup" class="btn-group-justified">
+        <div id="Alarm" class="btn btn-danger" data-toggle="modal" data-target="#setAlarmDialog">SET ALERT</div>
+        <div id="Map" class="btn btn-light">MAP</div>
+        <div id="Calendar" class="btn btn-success">GUIDE</div>
+    </div>
+
+    <div class="modal fade" id="setAlarmDialog" tabindex="-1" role="dialog" aria-labelledby="set alarm"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Set Alert</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label class="col-2 mt-1" for="alarmInput">Alert Element:</label>
+                        <div class="col-10 px-4">
+                            <select id="alarmInput" class="custom-select">
+                                <option selected>Alert Element</option>
+                                <option value="pm2">PM 2.5</option>
+                                <option value="pm10">PM 10</option>
+                                <option value="temperature">TEMPERATURE</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-2 mt-1" for="dataInput">Alert level :</label>
+                        <div id="inputControl" class="col-10 px-4">
+                            <input type="text" class="form-control" id="dataInput" aria-describedby="data input"
+                                placeholder="Set your level for alert">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button id="submit" type="submit" class="mr-4 btn btn-primary ml-auto" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/popper.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="/__/firebase/6.3.5/firebase-app.js"></script>
+    <script src="/__/firebase/6.3.5/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

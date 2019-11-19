@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Aqi Companion</title>
+</head>
+
+<body>
+  <nav id="detailNav" class="navbar navbar-dark fixed-top">
+    <div id="changeFavCity" data-toggle="modal">
+      <span id="fab1" class="glyphicon glyphicon-cog fa-2x"></span>
+    </div>
+    <div class="navbar-header">
+      <a id="cityName" class="navbar-brand" href="#">cityName</a>
+    </div>
+  </nav>
+
+  <div id="mainInfoContainer" class="row">
+    <div id="nextHour" class="col cll">
+      <div>next hour:</div>
+      <div id="nextHourStat">...</div>
+    </div>
+    <div id="stat" class="col cll ">
+      <div>PM 2.5</div>
+      <div id="currentHourStat">...</div>
+    </div>
+    <div id="weather" class="col cll">
+      <div id="currentWeather">...</div>
+    </div>
+  </div>
+
+
+  <div id="weekContainer" class="container">
+
+    <div id="infoBar" class="row">
+      <div id="barElement" class="bar-element col cll">
+
+      </div>
+      <div id="barElement1" class="bar-element col cll">
+        PM2.5
+      </div>
+      <div id="barElement2" class="bar-element col cll">
+        PM10
+      </div>
+      <div id="barElement3" class="bar-element col cll">
+        Temp
+      </div>
+    </div>
+    <div id="monday" class="row">
+      <div class="weekday col cll">
+        Monday
+      </div>
+      <div id="monE1" class="bar-element col cll">
+        ...
+      </div>
+      <div id="monE2" class="bar-element col cll">
+        ...
+      </div>
+      <div id="monE3" class="bar-element col cll">
+        ...
+      </div>
+    </div>
+
+    <div id="tuesday" class="row">
+      <div class="weekday col cll">
+        Tuesday
+      </div>
+      <div id="tueE1" class="bar-element col cll">
+        ...
+      </div>
+      <div id="tueE2" class="bar-element col cll">
+        ...
+      </div>
+      <div id="tueE3" class="bar-element col cll">
+        ...
+      </div>
+    </div>
+
+    <div id="wednesday" class="row">
+      <div class="weekday col cll">
+        Wednesday
+      </div>
+      <div id="wedE1" class="bar-element col cll">
+        ...
+      </div>
+      <div id="wedE2" class="bar-element col cll">
+        ...
+      </div>
+      <div id="wedE3" class="bar-element col cll">
+        ...
+      </div>
+    </div>
+
+    <div id="thursday" class="row">
+      <div class="weekday col cll">
+        Thursday
+      </div>
+      <div id="thuE1" class="bar-element col cll">
+        ...
+      </div>
+      <div id="thuE2" class="bar-element col cll">
+        ...
+      </div>
+      <div id="thuE3" class="bar-element col cll">
+        ...
+      </div>
+    </div>
+
+    <div id="Friday" class="row">
+      <div class="weekday col cll">
+        Friday
+      </div>
+      <div id="friE1" class="bar-element col cll">
+        ...
+      </div>
+      <div id="friE2" class="bar-element col cll">
+        ...
+      </div>
+      <div id="friE3" class="bar-element col cll">
+        ...
+      </div>
+    </div>
+
+    <div id="Saturday" class="row">
+      <div class="weekday col cll">
+        Saturday
+      </div>
+      <div id="satE1" class="bar-element col cll">
+        ...
+      </div>
+      <div id="satE2" class="bar-element col cll">
+        ...
+      </div>
+      <div id="satE3" class="bar-element col cll">
+        ...
+      </div>
+    </div>
+
+    <div id="Sunday" class="row">
+      <div class="weekday col cll">
+        Sunday
+      </div>
+      <div id="sunE1" class="bar-element col cll">
+        ...
+      </div>
+      <div id="sunE2" class="bar-element col cll">
+        ...
+      </div>
+      <div id="sunE3" class="bar-element col cll">
+        ...
+      </div>
+    </div>
+
+  </div>
+  <div id="homeBar" class="nav navbar">
+    <div class="navbar-header">
+      <img id="backBtn" src="triangle-left-arrow-outline.png" alt="back">
+      <img id="homeBtn" src="circle-outline.png" alt="home">
+      <img id="menuBtn" src="check-box-empty.png" alt="menu">
+    </div>
+  </div>
+
+  <div id="buttonGroup" class="btn-group-justified">
+    <div id="Alarm" class="btn btn-danger" data-toggle="modal" data-target="#setAlarmDialog">SET ALERT</div>
+    <div id="Map" class="btn btn-light">MAP</div>
+    <div id="Calendar" class="btn btn-success">GUIDE</div>
+  </div>
+
+
+
+  <div class="modal fade" id="setAlarmDialog" tabindex="-1" role="dialog" aria-labelledby="set alarm"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Set Alert</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+            <label class="col-2 mt-1" for="alarmInput">Alert Element:</label>
+            <div class="col-10 px-4">
+              <select id="alarmInput" class="custom-select">
+                <option selected>Alert Element</option>
+                <option value="pm2">PM 2.5</option>
+                <option value="pm10">PM 10</option>
+                <option value="temperature">TEMPERATURE</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-2 mt-1" for="dataInput">Alert level :</label>
+            <div id="inputControl" class="col-10 px-4">
+              <input type="text" class="form-control" id="dataInput" aria-describedby="data input"
+                placeholder="Set your level for alert">
+            </div>
+          </div>
+
+          <div class="row">
+
+            <button id="submit" type="submit" class="mr-4 btn btn-primary ml-auto"  data-dismiss="modal">Submit</button>
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="/__/firebase/6.3.5/firebase-app.js"></script>
+  <script src="/__/firebase/6.3.5/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
