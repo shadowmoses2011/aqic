@@ -45,7 +45,7 @@
   <div id="buttonGroup" class="btn-group-justified">
     <div id="Alarm" class="btn btn-danger">SET ALERT</div>
     <div id="Map" class="btn btn-light">MAP</div>
-    <div id="Calendar" class="btn btn-success">GUIDE</div>
+    <div id="Calendar" class="btn btn-success" data-toggle="modal" data-target="#guideDialog">GUIDE</div>
   </div>
 
   
@@ -91,6 +91,25 @@
         <button id="Auth" type="button" class="btn btn-outline-light" data-dismiss="modal">SIGN IN</button>
 
         </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="guideDialog" tabindex="-1" role="dialog" aria-labelledby="add user"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Guide</h5>
+      </div>
+      <div class="modal-body">
+        Air quality alert can be set either on city detail page or map page.
+      </div>
+      <div class="modal-body">
+        Favorite city feature allows you to access the map of that city directly from home page. 
+      </div>
+      <div class="modal-body">
+        If you try to add an invalid city and result in page being unresponsive, sign out and re-sign in or contact support at td202char@gmail.com.
       </div>
     </div>
   </div>
